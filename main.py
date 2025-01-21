@@ -1,3 +1,5 @@
 import loggers
 
-loggers.logWriteIn("mauro bois", 1200.69)
+loggers.logWriteOut("Luigi`s mansion", 1200.69)
+
+loggers.logWriteIn("mauro brois", 1200.69)
