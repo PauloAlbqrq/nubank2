@@ -1,2 +1,2 @@
 # nubank2
-## os poggers e os noggers juntinhos 
+## os poggers, os noggers e os loggers juntinhos 
