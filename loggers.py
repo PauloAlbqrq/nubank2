@@ -3,7 +3,7 @@ import datetime
 def logWriteIn(conta: str, valor: float):
     try:
         arquivoLog = open("log.txt", "x")
-    except:
+    except FileExistsError:
         arquivoLog = open("log.txt", "a")
     
     arquivoLog.write(f"[{datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')}] R${valor} depositados na conta {conta}\n")
@@ -12,7 +12,7 @@ def logWriteIn(conta: str, valor: float):
 def logWriteOut(conta: str, valor: float):
     try:
         arquivoLog = open("log.txt", "x")
-    except:
+    except FileExistsError:
         arquivoLog = open("log.txt", "a")
     
     arquivoLog.write(f"[{datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')}] R${valor} sacados da conta {conta}\n")
