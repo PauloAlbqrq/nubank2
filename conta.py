@@ -1,8 +1,10 @@
+import threading
+
 class conta:
-    def _init_(self, id, saldo_inicial):
+    def __init__(self, id, saldo_inicial):
         self.__id = id
         self.__saldo = saldo_inicial
-        self.__lock = True
+        self.lock = threading.Semaphore(1)
         
     def getID(self):
         return self.__id
@@ -10,16 +12,14 @@ class conta:
     def getSaldo(self):
         return self.__saldo
     
-    # concede o lock a uma thread
-    def getLock(self):
-        if self.__lock != False:
-            return True
-            self.__lock = False
+    # concede o semáforo a uma thread
+    # def acquireSemaphore(self):
+    #     return self.__semaphore.acquire(blocking=False)
     
-    # devolve o lock para a conta depois da thread realizar a transferência
-    def returnLock(self):
-        if self.__lock == False:
-            self.__lock
+    # devolve o semáforo para a conta depois da thread realizar a transferência
+    # def releaseSemaphore(self):
+    #     if self.__semaphore._value == 0:
+    #         self.__semaphore.release()
             
     def depositar(self, valor):
         if valor > 0:
