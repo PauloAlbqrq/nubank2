@@ -24,11 +24,15 @@ class conta:
     def depositar(self, valor):
         if valor > 0:
             self.__saldo += valor
+            return True
         else:
             print("Valor inválido")
+            return False
             
     def sacar(self, valor):
         if valor > 0 and valor<=self.__saldo:
             self.__saldo -= valor
+            return True
         else:
             print("operação inválida")
+            return False
