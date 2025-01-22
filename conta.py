@@ -4,7 +4,7 @@ class conta:
     def __init__(self, id, saldo_inicial):
         self.__id = id
         self.__saldo = saldo_inicial
-        self.lock = threading.Semaphore(1)
+        self.lock = threading.Lock()
         
     def getID(self):
         return self.__id
