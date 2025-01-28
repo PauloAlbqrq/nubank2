@@ -100,6 +100,26 @@ def altaConcorrencia():
     print(f"\033[93mSaldo total final: {saldoTotalFinal:.2f}\033[0m")
     transacao.logWrite()
     print(len(transacao.log))
-    
+
+def saldoInsuficiente():
+    ct1 = conta(1, 100)
+    ct2 = conta(2, 200)
+    ct3 = conta(3, 300)
+    ct4 = conta(4, 400)
+    ct5 = conta(5, 500)
+
+    transacao = transferencia()
+
+    T1 = threading.Thread(target=transacao.transferir, args=(ct1, ct2, 600))
+    T2 = threading.Thread(target=transacao.transferir, args=(ct2, ct3, 1000))
+
+    T1.start()
+    T2.start()
+
+    T1.join()
+    T2.join()
+    transacao.logWrite()
+
 cenarioSimples()
 altaConcorrencia()
+saldoInsuficiente()
