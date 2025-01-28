@@ -1,7 +1,11 @@
-# Sistema de Transferências Bancárias com Python
-Um projeto de simulação de operações bancárias utilizando Python, com foco em multithreading, locks, prevenção de deadlocks e logs de transações.
+# Sistema Bancário 🏦
 
-- Criação de Contas: Crie contas bancárias com IDs únicos e saldo inicial personalizado.
-- Exibição de Saldo: Consulte o saldo atual de qualquer conta.
-- Transferências Bancárias: Realize transferências entre contas com validação de saldo, utilizando locks para evitar condições de corrida.
-- Logs de Transações: Registra todas as operações realizadas (sucesso e falha), incluindo deadlocks detectados.
+Este projeto simula um sistema bancário com contas que possuem ID, saldo e mecanismos de segurança (`locks`), garantindo operações seguras em um ambiente de múltiplas `threads`. Ele inclui as classes principais conta, que representa as contas bancárias com atributos como ID, saldo e `lock`, e transferencia, que gerencia transferências e `logs`. Três cenários principais são simulados: **transferências simples** para validar operações básicas, **alta concorrência** para testar a integridade do sistema com múltiplas threads e **saldo insuficiente** para assegurar a rejeição de transferências inválidas. Logs são registrados e armazenados para auditoria.
+
+## Autores 👨🏻‍💻
+
+- [**Eduarda Leigue**](https://github.com/leigueed)  
+- [**João do Monte**](https://github.com/joaomonteandrade)  
+- [**Matheus Henrique**](https://github.com/Modheus)  
+- [**Paulo Ximenes**](https://github.com/PauloAlbqrq)  
+- [**Luiz Guilherme**](https://github.com/guiguik12)
